@@ -1,0 +1,104 @@
+{
+  "name": "react-native-innovant",
+  "version": "0.3.1",
+  "description": "React Native Innovant UI Library",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "react-native",
+    "reactjs",
+    "reactnative",
+    "ui"
+  ],
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "test:update": "jest -u",
+    "format:fix": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,yml}\"",
+    "test:ci": "jest --runInBand --detectOpenHandles",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "prettify": "prettier --single-quote --trailing-comma=es5 --write './**/*.md'",
+    "clean-install": "rimraf node_modules && yarn",
+    "changelog": "auto-changelog -p",
+    "prepare": "rimraf dist && tsc"
+  },
+  "bugs": {
+    "url": "https://github.com/ahmnouira/react-native-innovant/issues"
+  },
+  "repository": {
+    "url": "https://github.com/ahmnouira/react-native-innovant.git",
+    "type": "git"
+  },
+  "readme": "https://github.com/ahmnouira/react-native-innovant.git#readme",
+  "homepage": "https://github.com/ahmnouira/react-native-innovant/",
+  "license": "MIT",
+  "devDependencies": {
+    "@testing-library/react-native": "9.1.0",
+    "@types/faker": "6.6.8",
+    "@types/jest": "27.0.3",
+    "@types/react": "17.0.37",
+    "@types/react-native": "0.67.3",
+    "@types/react-native-snackbar-component": "1.1.1",
+    "@types/react-native-vector-icons": "6.4.10",
+    "@types/react-test-renderer": "17.0.1",
+    "auto-changelog": "2.4.0",
+    "babel-jest": "27.3.1",
+    "codecov": "3.8.3",
+    "eslint": "8.3.0",
+    "faker": "6.6.6",
+    "husky": "7.0.4",
+    "jest": "27.3.1",
+    "metro-react-native-babel-preset": "0.69.1",
+    "prettier": "2.6.1",
+    "react": "17.0.2",
+    "react-native": "0.67.4",
+    "react-native-vector-icons": "8.1.0",
+    "react-test-renderer": "17.0.2",
+    "rimraf": "3.0.2",
+    "ts-node": "10.7.0",
+    "typescript": "4.6.3"
+  },
+  "dependencies": {
+    "react-native-device-info": "^8.1.7",
+    "react-native-fast-image": "^8.3.7",
+    "react-native-raw-bottom-sheet": "^2.2.0",
+    "react-native-simple-toast": "1.1.3",
+    "react-native-snackbar-component": "1.1.12",
+    "react-native-vector-icons": "^9.0.0"
+  },
+  "peerDependencies": {
+    "react-native-vector-icons": ">7.0.0"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint --fix",
+      "bash -c tsc",
+      "jest --bail --findRelatedTests"
+    ],
+    "src/**/*.{js,jsx}": [
+      "eslint --fix",
+      "jest --bail --findRelatedTests"
+    ],
+    "./src/**": [
+      "prettier --write ."
+    ]
+  },
+  "author": {
+    "name": "Ahmed Nouira",
+    "email": "ahmnouira@gmail.com",
+    "url": "https://github.com/ahmnouira"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "resolutions": {
+    "@types/react": "17.0.26"
+  }
+}

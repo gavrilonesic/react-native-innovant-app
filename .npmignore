@@ -1,0 +1,8 @@
+node_modules
+.github
+*.spec.ts
+*.spec.tsx
+src/assets
+utils/consts.ts
+
+
